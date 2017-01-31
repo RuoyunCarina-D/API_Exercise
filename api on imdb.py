@@ -1,30 +1,14 @@
-'''
-Getting Data from APIs
-What is an API?
-- Application Programming Interface
-- Structured way to expose specific functionality and data access to users
-- Web APIs usually follow the "REST" standard
-How to interact with a REST API:
-- Make a "request" to a specific URL (an "endpoint"), and get the data back in a "response"
-- Most relevant request method for us is GET (other methods: POST, PUT, DELETE)
-- Response is often JSON format
-- Web console is sometimes available (allows you to explore an API)
-'''
 
 # read IMDb data into a DataFrame: we want a year column!
 import pandas as pd
-# movies = pd.read_csv('imdb_1000.csv')
-movies = pd.read_csv('https://raw.githubusercontent.com/josephofiowa/GA-DSI/master/intro-to-apis-python/assets/data/imdb_1000.csv')
-movies.head() #first five rows of mouvies
+
+movies = pd.read_csv('imdb_1000.csv')
+movies.head() 
 
 # use requests library to interact with a URL
 import requests
 r = requests.get('http://www.omdbapi.com/?t=the shawshank redemption&r=json&type=movie')
-
-# check the status: 200 means success, 4xx means error
 r.status_code
-
-# view the raw response text
 r.text
 
 # decode the JSON response body into a dictionary
