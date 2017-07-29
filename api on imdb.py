@@ -7,7 +7,7 @@ movies.head()
 
 # use requests library to interact with a URL
 import requests
-r = requests.get('http://www.omdbapi.com/?t=the shawshank redemption&r=json&type=movie')
+r = requests.get("http://www.omdbapi.com/?t=the shawshank redemption&r=json&type=movie")
 r.status_code
 r.text
 
